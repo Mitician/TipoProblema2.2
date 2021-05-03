@@ -17,22 +17,22 @@
 </head>
 <body>
 	<h5 class="mt-4" style="text-align:center">Registrar nuevo usuario</h5>
-	<form action="/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
+	<form action="/api/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
     <div class="form-group">
         <label for="rut">Rut</label>
-        <input type="text" name="rut" id="rut" class="form-control">
+        <input type="text" name="rut" id="rut" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" class="form-control">
+        <input type="text" name="nombre" id="nombre" class="form-control" required>
     </div>
     <div class="form-group">
         <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido" class="form-control">
+        <input type="text" name="apellido" id="apellido" class="form-control" required>
     </div>
      <div class="form-group">
         <label for="email">Email</label>
-        <input type="text" name="email" id="email" class="form-control">
+        <input type="text" name="email" id="email" class="form-control" required>
     </div>
     <div class="form-group">
       <div class="form-check">
@@ -50,11 +50,11 @@
     </div>
      <div class="form-group">
         <label for="profesion">Profesión</label>
-        <input type="text" name="profesion" id="profesion" class="form-control">
+        <input type="text" name="profesion" id="profesion" class="form-control" required>
     </div>
     <br>
     <div class="row justify-content-center">
-        <input type="submit" class="btn btn-primary" value="Agregar pelicula">
+        <input type="submit" class="btn btn-primary" value="Agregar usuario">
     </div>
     </form>
     <br>
@@ -81,7 +81,7 @@
     			<td><c:out value="${persona.sexo}"></c:out></td>
     			<td><c:out value="${persona.profesion}"></c:out></td>
     			<td><button type="button" class="btn btn-success" id='${persona.id}'data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></button>
-           			 <a type="button" class="btn btn-danger" href='/dpeliculas/eliminar/${persona.id}'><i class="far fa-trash-alt"></i></a></td>
+           			 <a type="button" class="btn btn-danger" href='/personas/eliminar/${persona.id}'><i class="far fa-trash-alt"></i></a></td>
     		</tr>
     		</c:forEach>
     	</tbody>

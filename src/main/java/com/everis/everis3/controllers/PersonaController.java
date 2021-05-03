@@ -21,32 +21,6 @@ public class PersonaController {
 	@Autowired
 	PersonaService personasService;
 	
-	@RequestMapping("personas/agregar")
-	public String personas(@RequestParam(value="rut")String rutBack,
-			@RequestParam(value="nombre")String nombreBack,
-			@RequestParam(value="apellido")String apellidoBack,
-			@RequestParam(value="email")String emailBack,
-			@RequestParam(value="sexo")String sexoBack,
-			@RequestParam(value="profesion")String profesionBack,
-			Model model) {
-		
-		Persona persona = new Persona();
-		persona.setRut(rutBack);
-		persona.setNombre(nombreBack);
-		persona.setApellido(apellidoBack);
-		persona.setEmail(emailBack);
-		persona.setSexo(sexoBack);
-		persona.setProfesion(profesionBack);
-		
-		persona = personasService.guardarPersona(persona);
-		return "redirect:/";
-	}
-	
-	@RequestMapping("personas/eliminar/{id}")
-	public String eliminarPersona(@PathVariable("id") Long id) {
-		personasService.deleteById(id);
-		return "redirect:/";
-	}
 	
 	@RequestMapping("personas/editar/{id}")
 	public String editarPersona(@PathVariable("id") Long id, Model model) {

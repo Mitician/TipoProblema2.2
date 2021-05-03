@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,13 +21,14 @@ public class Persona {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String rut;
+	@Size(min=3, max=20)
 	private String nombre;
+	@Size(min=3, max=20)
 	private String apellido;
 	private String email;
 	private String sexo;
 	private String profesion;
 	
-
 	// Esto no permitirá que el campo createdAt sea modificado después de su creación.
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
