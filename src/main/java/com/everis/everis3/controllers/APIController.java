@@ -44,7 +44,7 @@ public class APIController {
 		return personas_lista;
 	}
 	
-	@RequestMapping("personas/eliminar/{id}")
+	@RequestMapping("/api/personas/eliminar/{id}")
 	public String eliminarPersona(@PathVariable("id") Long id) {
 		personasService.deleteById(id);
 		return "Se ha eliminado";

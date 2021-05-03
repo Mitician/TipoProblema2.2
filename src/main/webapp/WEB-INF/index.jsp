@@ -18,6 +18,7 @@
 	    	   $('#personas td:last').after('<td><button id='+i+' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal"><i class="bi bi-pencil"></i></button></td>');
 	    	 }
 	    });
+	    
 	})
 	</script>
 <link rel="stylesheet" href="css/style.css">
@@ -29,7 +30,7 @@
 </head>
 <body>
 	<h5 class="mt-4" style="text-align:center">Registrar nuevo usuario</h5>
-	<form id="#form1" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
+	<form id="#form1" action="/api/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
     <div class="form-group">
         <label for="rut">Rut</label>
         <input type="text" name="rut" id="rut" class="form-control" required>

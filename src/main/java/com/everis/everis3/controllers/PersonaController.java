@@ -21,6 +21,7 @@ public class PersonaController {
 	@Autowired
 	PersonaService personasService;
 	
+
 	
 	@RequestMapping("personas/editar/{id}")
 	public String editarPersona(@PathVariable("id") Long id, Model model) {
