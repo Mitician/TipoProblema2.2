@@ -17,7 +17,7 @@
 </head>
 <body>
 	<h5 class="mt-4" style="text-align:center">Peliculas</h5>
-	<form action="/dpeliculas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
+	<form action="/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
     <div class="form-group">
         <label for="rut">Rut</label>
         <input type="text" name="rut" id="rut" class="form-control">
