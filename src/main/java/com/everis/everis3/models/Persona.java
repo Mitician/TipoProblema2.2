@@ -23,6 +23,8 @@ public class Persona {
 	private String nombre;
 	private String apellido;
 	private String email;
+	private String sexo;
+	private String profesion;
 	
 
 	// Esto no permitirá que el campo createdAt sea modificado después de su creación.
@@ -72,6 +74,18 @@ public class Persona {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getSexo() {
+		return sexo;
+	}
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+	public String getProfesion() {
+		return profesion;
+	}
+	public void setProfesion(String profesion) {
+		this.profesion = profesion;
 	}
 	
 	@PrePersist

@@ -13,7 +13,7 @@ import com.everis.everis3.repositories.PersonaRepository;
 
 @Service
 public class PersonaService {
-	@Autowired //inyeccion de dependencia
+	@Autowired
 	PersonaRepository personarepository;
 	
 	public Persona guardarPersona(Persona persona) {
