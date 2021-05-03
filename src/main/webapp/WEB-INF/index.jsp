@@ -16,17 +16,15 @@
 
 </head>
 <body>
-	<h5 class="mt-4" style="text-align:center">Peliculas</h5>
+	<h5 class="mt-4" style="text-align:center">Registrar nueva persona</h5>
 	<form action="/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
     <div class="form-group">
         <label for="rut">Rut</label>
         <input type="text" name="rut" id="rut" class="form-control">
     </div>
-    <div class="input-group">
+    <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text" name="nombre" id="nombre" class="form-control">
-        <label for="apellido">Apellido</label>
-        <input type="text" name="apellido" id="apellido" class="form-control">
     </div>
     <div class="form-group">
         <label for="apellido">Apellido</label>
@@ -46,7 +44,7 @@
     </div>
     <br>
     <div class="row justify-content-center">
-        <input type="submit" class="btn btn-primary" value="Agregar pelicula">
+        <input type="submit" class="btn btn-primary" value="Agregar persona">
     </div>
     </form>
     <br>
