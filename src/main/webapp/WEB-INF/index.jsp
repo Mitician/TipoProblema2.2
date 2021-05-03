@@ -16,7 +16,7 @@
 
 </head>
 <body>
-	<h5 class="mt-4" style="text-align:center">Registrar nueva persona</h5>
+	<h5 class="mt-4" style="text-align:center">Registrar nuevo usuario</h5>
 	<form action="/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
     <div class="form-group">
         <label for="rut">Rut</label>
@@ -34,9 +34,19 @@
         <label for="email">Email</label>
         <input type="text" name="email" id="email" class="form-control">
     </div>
-     <div class="form-group">
-        <label for="sexo">Sexo</label>
-        <input type="text" name="sexo" id="sexo" class="form-control">
+    <div class="form-group">
+      <div class="form-check">
+	  <input class="form-check-input" type="radio" value="Masculino" name="sexo" id="Masculino">
+	  <label class="form-check-label" for="sexo">
+	   	Masculino
+	  </label>
+	</div>
+	<div class="form-check">
+	  <input class="form-check-input" type="radio" value="Femenino" name="sexo" id="Femenino" checked>
+	  <label class="form-check-label" for="sexo">
+	   Femenino
+	  </label>
+	</div>
     </div>
      <div class="form-group">
         <label for="profesion">Profesión</label>
@@ -44,7 +54,7 @@
     </div>
     <br>
     <div class="row justify-content-center">
-        <input type="submit" class="btn btn-primary" value="Agregar persona">
+        <input type="submit" class="btn btn-primary" value="Agregar pelicula">
     </div>
     </form>
     <br>
