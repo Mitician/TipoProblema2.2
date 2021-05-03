@@ -8,6 +8,18 @@
 <meta charset="ISO-8859-1">
 <title>hey</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script>
+  	$(document).ready(function() {
+	    $.ajax({
+	        url: "api/personas/mostrar"
+	    }).then(function(personas) {
+	       for (i = 0; i < personas.length; i++) {
+	    	   $('#personas tr:last').after('<tr><td>'+personas[i].rut+'</td><td>'+personas[i].nombre+'</td><td>'+personas[i].apellido+'</td><td>'+personas[i].email+'</td><td>'+personas[i].sexo+'</td><td>'+personas[i].profesion+'</td><td><a class="btn btn-primary" href="api/personas/eliminar/'+personas[i].id+'"><i class="bi bi-trash"></i></a></td></tr>');
+	    	   $('#personas td:last').after('<td><button id='+i+' type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal"><i class="bi bi-pencil"></i></button></td>');
+	    	 }
+	    });
+	})
+	</script>
 <link rel="stylesheet" href="css/style.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -17,7 +29,7 @@
 </head>
 <body>
 	<h5 class="mt-4" style="text-align:center">Registrar nuevo usuario</h5>
-	<form action="/api/personas/agregar" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
+	<form id="#form1" method="POST" class="main-form needs-validation" style="width:500px; margin:auto"novalidate>
     <div class="form-group">
         <label for="rut">Rut</label>
         <input type="text" name="rut" id="rut" class="form-control" required>
@@ -60,7 +72,8 @@
     <br>
     <hr>
     <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
-    <table class="table">
+    
+    <table class="table" id="personas">
     	<thead class="thead-light">
     		<tr>
     			<th>Rut</th>
@@ -69,24 +82,16 @@
     			<th>Email</th>
     			<th>Sexo</th>
     			<th>Profesión</th>
+    			<th colspan="2">Acciones</th>
     		</tr>
     	</thead>
     	<tbody>
-    		<c:forEach var = "persona" items="${personas}">
     		<tr>
-    			<td><c:out value="${persona.rut}"></c:out></td>
-    			<td><c:out value="${persona.nombre}"></c:out></td>
-    			<td><c:out value="${persona.apellido}"></c:out></td>
-    			<td><c:out value="${persona.email}"></c:out></td>
-    			<td><c:out value="${persona.sexo}"></c:out></td>
-    			<td><c:out value="${persona.profesion}"></c:out></td>
-    			<td><button type="button" class="btn btn-success" id='${persona.id}'data-bs-toggle="modal" data-bs-target="#editModal"><i class="fas fa-edit"></i></button>
-           			 <a type="button" class="btn btn-danger" href='/personas/eliminar/${persona.id}'><i class="far fa-trash-alt"></i></a></td>
     		</tr>
-    		</c:forEach>
     	</tbody>
     </table>
    	</div>
+ 
    	
 
 <!-- 
